@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic tac toe</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="stars"></div>
+      <div id="hearts">
+        <!-- coding the hearts in html instead of js to 
+         avoid the reload issue-->
+        <!-- used vh; and vw to positions the hearts to mach my figma design exctly and stay in the same
+           position even when the size of the window changes-->
+        <div class="heart" style="top: 5vh; left: 6vw"></div>
+        <div class="heart" style="top: 25vh; left: 17vw"></div>
+        <div class="heart" style="top: 38vh; left: 5vw"></div>
+        <div class="heart" style="top: 65vh; left: 13vw"></div>
+        <div class="heart" style="top: 80vh; left: 74vw"></div>
+        <div class="heart" style="top: 35vh; left: 35vw"></div>
+        <div class="heart" style="top: 18vh; left: 90vw"></div>
+        <div class="heart" style="top: 38vh; left: 80vw"></div>
+        <div class="heart" style="top: 90vh; left: 26vw"></div>
+        <div class="heart" style="top: 58vh; left: 85vw"></div>
+        <div class="heart" style="top: 7vh; left: 70vw"></div>
+      </div>
+    </div>
+    <div class="game-name"><h1>TIC TAC TOE</h1></div>
+    <div class="xo-title">
+      <img src="images/x.png" alt="" />
+      <img src="images/O.png" alt="" />
+    </div>
+    <div class="start-button-container">
+      <button id="startButton">START</button>
+    </div>
+    <div class="menu-buttons">
+      <!--how to play pop up window-->
+      <button id="howToPlayBtn">HOW TO PLAY</button>
+
+      <div id="howToPlayWindow">
+        <div class="how-to-play-window-header">
+          <button class="close-btn">X</button>
+        </div>
+        <div class="how-to-play-window-content">
+          <h3 class="htp-h3">HOW TO PLAY</h3>
+          <br />
+          <p class="htp-p">
+            Tic Tac Toe is played on a 3×3 grid. <br />
+            <br />
+            Player X goes first. <br />
+            <br />
+            Players take turns placing their mark (X or O) in any empty
+            square.<br />
+            <br />
+            The goal is to be the first to get 3 in a row: <br />
+            - Horizontally <br />
+            - Vertically <br />
+            - Or diagonally <br />
+            <br />
+            If all 9 squares are filled and no one gets 3 in a row, the game
+            ends in a draw. <br />
+            <br />
+          </p>
+        </div>
+      </div>
+
+      <button id="creditsBtn">CREDITS</button>
+
+      <div id="creditsWindow">
+        <div class="credits-window-header">
+          <button class="close-btn-c">X</button>
+        </div>
+        <div class="credits-window-content">
+          <h3 class="cred-h3">CREDITS</h3>
+          <br />
+          <p class="cred-p">
+            Designed and programmed by: <br />
+            <br />
+            Leen Ahmad Kaddour <br />
+          </p>
+          <img src="images/doubleheart.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!--music-->
+    <div id="music-window">
+      <!--exit button retro style-->
+
+      <!--the play secrtion-->
+      <div class="window-content">
+        <p id="song-title"></p>
+        <canvas id="music-visualizer" width="560" height="20"></canvas>
+        <!--so js can load songs -->
+        <audio id="bg-music" loop></audio>
+        <div class="music-controls">
+          <button class="back-btn">
+            <img src="images/back.png" alt="" />
+          </button>
+
+          <button id="play-pause">
+            <img id="play-icon" src="images/playbutton.png" alt="" />
+          </button>
+
+          <button class="next-btn">
+            <img src="images/next.png" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--music-->
+
+    <div id="gameOverlay">
+      <div class="gameWindow">
+        <div class="container">
+          <!-- aaplied the stars and the hearts again beacous i oculdnt figuer out the z-index-->
+          <div id="stars2"></div>
+          <div id="hearts2">
+            <!-- coding the hearts in html instead of js to 
+         avoid the reload issue-->
+            <!-- used vh; and vw to positions the hearts to mach my figma design exctly and stay in the same
+           position even when the size of the window changes-->
+            <div class="heart" style="top: 5vh; left: 6vw"></div>
+            <div class="heart" style="top: 25vh; left: 17vw"></div>
+            <div class="heart" style="top: 38vh; left: 5vw"></div>
+            <div class="heart" style="top: 65vh; left: 13vw"></div>
+            <div class="heart" style="top: 80vh; left: 74vw"></div>
+            <div class="heart" style="top: 35vh; left: 34.5vw"></div>
+            <div class="heart" style="top: 18vh; left: 90vw"></div>
+            <div class="heart" style="top: 38vh; left: 80vw"></div>
+            <div class="heart" style="top: 90vh; left: 26vw"></div>
+            <div class="heart" style="top: 58vh; left: 85vw"></div>
+            <div class="heart" style="top: 7vh; left: 70vw"></div>
+          </div>
+        </div>
+        <div class="game-name"><h1>TIC TAC TOE</h1></div>
+        <div class="scoreboard">
+          <img src="images/x.png" alt="X" class="score-icon" />
+          <span id="xScore">0</span>
+          <span class="dash">—</span>
+          <span id="oScore">0</span>
+          <img src="images/O.png" alt="O" class="score-icon" />
+        </div>
+        <button id="musicMiniBtn">
+          <img id="miniMusicIcon" src="images/audioicon.png" />
+        </button>
+        <hr />
+        <div id="gameBoard"></div>
+      </div>
+    </div>
+  </body>
+</html>

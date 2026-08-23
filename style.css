@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* removes default white margin */
+  background-color: black;
+  border: 7px solid #6d4397;
+  min-height: 100vh; /* full screen height */
+  box-sizing: border-box;
+  font-family: "Jersey 10", sans-serif;
+  cursor: url("images/customecursor.png"), auto;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+/*instead of hard coding the stars i got an image of a white dot and animated it and styled it*/
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-size: cover;
+  animation: animationstars 1s infinite ease-in-out alternate;
+}
+
+.star {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-image: url("images/stars.png");
+  background-size: cover;
+  animation: drift 2s infinite ease-in-out alternate;
+}
+
+@keyframes animationstars {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+#hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+.heart {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("images/heart.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.game-name {
+  position: relative;
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  text-align: center;
+  -webkit-text-stroke: 0.5px #bf91f3;
+}
+
+.xo-title {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  transform: translateY(-15px);
+}
+
+.xo-title img {
+  width: 70px;
+  height: 70px;
+}
+
+#startButton {
+  position: absolute;
+  font-family: "Jersey 10", monospace;
+  font-size: 200px;
+  color: white;
+  -webkit-text-stroke: 2px #6d4397;
+  background-color: transparent;
+  border: none;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: url("images/pinkC.png"), auto;
+  z-index: 1;
+}
+
+#startButton:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.menu-buttons {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 150px;
+  caret-color: transparent;
+  z-index: 1;
+}
+
+.menu-buttons button {
+  font-family: "Jersey 10", monospace;
+  font-size: 30px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: url("images/Pinkc.png"), auto;
+
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* makes the lines under the buttons*/
+.menu-buttons button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+.menu-buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* music box */
+#music-window {
+  position: absolute;
+  margin-top: 20px;
+  bottom: -1px;
+  top: 590px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 130px;
+  background-color: rgba(255, 255, 255, 0.5); /* white with 50% opacity */
+  cursor: url("images/Pinkc.png"), auto;
+  z-index: 1;
+}
+
+.window-content {
+  height: 130px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(255, 148, 197, 0.5); /* pink with 50% opacity */
+  border: 2px solid #ffffff;
+}
+.music-controls {
+  display: flex; /* row layout for buttons */
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  caret-color: transparent;
+}
+
+.back-btn,
+.next-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: url("images/Pinkc.png"), auto;
+  caret-color: transparent;
+}
+
+.back-btn:hover,
+.next-btn:hover {
+  transform: scale(1.1);
+}
+
+#play-pause {
+  cursor: url("images/Pinkc.png"), auto;
+  background: transparent;
+  border: none;
+}
+
+#play-pause:hover {
+  transform: scale(1.1);
+}
+
+#song-title {
+  color: white;
+  -webkit-text-stroke: 0.5px #000;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 7px;
+  caret-color: transparent;
+}
+
+#howToPlayWindow {
+  position: absolute;
+  bottom: -30px;
+  right: 160%;
+  width: 300px;
+  height: 360px;
+  background-color: #ffffff;
+  display: none;
+}
+
+.how-to-play-window-header {
+  background-color: rgb(0, 0, 0);
+  border: 4px solid #ffffff;
+  padding: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 25px;
+}
+
+.how-to-play-window-content {
+  border: 4px solid #ffffff;
+  background-color: #000;
+  overflow-y: auto;
+  padding: 10px;
+  color: white;
+  height: 325px;
+}
+
+.close-btn {
+  text-decoration: none;
+  line-height: 1;
+  outline: none;
+  top: 5px;
+  caret-color: transparent;
+}
+
+.close-btn::after,
+.close-btn::before {
+  content: none !important;
+}
+
+.htp-h3 {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 100;
+}
+
+.htp-p {
+  font-size: 20px;
+}
+
+/* */
+
+#creditsWindow {
+  position: absolute;
+  bottom: -30px;
+  left: 160%;
+  width: 300px;
+  height: 360px;
+  background-color: #ffffff;
+  display: none;
+}
+
+.credits-window-header {
+  background-color: rgb(0, 0, 0);
+  border: 4px solid #ffffff;
+  padding: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 25px;
+}
+
+.credits-window-content {
+  border: 4px solid #ffffff;
+  background-color: #000;
+  padding: 10px;
+  color: white;
+  height: 325px;
+}
+
+.close-btn-c {
+  text-decoration: none;
+  line-height: 1;
+  outline: none;
+  top: 5px;
+  caret-color: transparent;
+}
+
+.close-btn-c::after,
+.close-btn-c::before {
+  content: none !important;
+}
+
+.cred-h3 {
+  font-size: 60px;
+  text-align: center;
+  font-weight: 100;
+}
+
+.cred-p {
+  font-size: 30px;
+  text-align: center;
+}
+
+.credits-window-content img {
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 70px;
+  margin-top: 20px;
+}
+
+#gameOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 3;
+  display: none;
+  border: 7px solid #6d4397;
+}
+
+#stars2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-size: cover;
+  animation: animationstars 1s infinite ease-in-out alternate;
+}
+
+.star2 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-image: url("images/stars.png");
+  background-size: cover;
+  animation: drift 2s infinite ease-in-out alternate;
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 85px;
+  color: white;
+  caret-color: transparent;
+}
+
+.score-icon {
+  width: 70px;
+  height: 70px;
+  caret-color: transparent;
+}
+
+#musicMiniBtn {
+  background-color: #000;
+  border: #000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: url("images/pinkC.png"), auto;
+}
+
+hr {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#gameBoard {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  background-color: #6d4a94;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  background-color: 6d4a94 (255, 255, 255, 0.7);
+  caret-color: transparent;
+}
+
+.tile {
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.horizontal-line {
+  border-bottom: 10px solid black;
+}
+
+.vertical-line {
+  border-right: 10px solid black;
+}
+
+.winner {
+  background-color: white;
+}
+
+.player-icon {
+  width: 50px;
+  height: 50px;
+}
