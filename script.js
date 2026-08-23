@@ -207,7 +207,7 @@ miniBtn.addEventListener("click", () => {
 //game
 
 var board;
-var playerO = "<img src='images/o.png' alt='O' class='player-icon'>";
+var playerO = "<img src='images/O.png' alt='O' class='player-icon'>";
 var playerx = "<img src='images/x.png' alt='X' class='player-icon'>";
 //first player to start is X
 var currentplayer = playerx;
