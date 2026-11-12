@@ -146,7 +146,7 @@ body {
 #music-window {
   position: absolute;
 
-  bottom: -1px;
+ 
   top: 590px;
   left: 50%;
   transform: translateX(-50%);
