@@ -145,7 +145,7 @@ body {
 /* music box */
 #music-window {
   position: absolute;
-  margin-top: 20px;
+
   bottom: -1px;
   top: 590px;
   left: 50%;
