@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 /*instead of hard coding the stars i got an image of a white dot and animated it and styled it*/
 #stars {
